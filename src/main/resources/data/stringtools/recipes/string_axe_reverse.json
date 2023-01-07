@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"SS",
+		"ST",
+		" T"
+	],
+	"key": {
+		"S": {
+			"item": "minecraft:string"
+		},
+		"T": {
+			"item": "stringtools:string_stick"
+		}
+	},
+	"result": {
+		"item": "stringtools:string_axe"
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"S",
+		"S"
+	],
+	"key": {
+		"S": {
+			"item": "minecraft:string"
+		}
+	},
+	"result": {
+		"item": "stringtools:string_stick",
+		"count": 4
+	}
+}
