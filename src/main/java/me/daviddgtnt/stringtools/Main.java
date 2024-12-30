@@ -17,12 +17,12 @@ public class Main implements ModInitializer {
 	
 	@Override
 	public void onInitialize() {
-		Registry.register(Registries.ITEM, new Identifier("stringtools", "string_stick"), STRING_STICK);
-		Registry.register(Registries.ITEM, new Identifier("stringtools", "string_sword"), STRING_SWORD);
-		Registry.register(Registries.ITEM, new Identifier("stringtools", "string_pickaxe"), STRING_PICKAXE);
-		Registry.register(Registries.ITEM, new Identifier("stringtools", "string_axe"), STRING_AXE);
-		Registry.register(Registries.ITEM, new Identifier("stringtools", "string_shovel"), STRING_SHOVEL);
-		Registry.register(Registries.ITEM, new Identifier("stringtools", "string_hoe"), STRING_HOE);
+		Registry.register(Registries.ITEM, Identifier.of("stringtools", "string_stick"), STRING_STICK);
+		Registry.register(Registries.ITEM, Identifier.of("stringtools", "string_sword"), STRING_SWORD);
+		Registry.register(Registries.ITEM, Identifier.of("stringtools", "string_pickaxe"), STRING_PICKAXE);
+		Registry.register(Registries.ITEM, Identifier.of("stringtools", "string_axe"), STRING_AXE);
+		Registry.register(Registries.ITEM, Identifier.of("stringtools", "string_shovel"), STRING_SHOVEL);
+		Registry.register(Registries.ITEM, Identifier.of("stringtools", "string_hoe"), STRING_HOE);
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content -> content.addBefore(Items.STICK, STRING_STICK));
 		
