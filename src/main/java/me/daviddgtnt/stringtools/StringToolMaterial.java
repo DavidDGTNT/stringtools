@@ -1,8 +1,11 @@
 package me.daviddgtnt.stringtools;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagKey;
 
 public class StringToolMaterial implements ToolMaterial {
 	public static final StringToolMaterial INSTANCE = new StringToolMaterial();
@@ -23,8 +26,8 @@ public class StringToolMaterial implements ToolMaterial {
 	}
 	
 	@Override
-	public int getMiningLevel() {
-		return 0;
+	public TagKey<Block> getInverseTag() {
+		return BlockTags.INCORRECT_FOR_WOODEN_TOOL;
 	}
 	
 	@Override

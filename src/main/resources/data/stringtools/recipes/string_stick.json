@@ -10,7 +10,7 @@
 		}
 	},
 	"result": {
-		"item": "stringtools:string_stick",
+		"id": "stringtools:string_stick",
 		"count": 4
 	}
 }
