@@ -6,12 +6,8 @@
 		"T"
 	],
 	"key": {
-		"S": {
-			"item": "minecraft:string"
-		},
-		"T": {
-			"item": "stringtools:string_stick"
-		}
+		"S": "minecraft:string",
+		"T": "stringtools:string_stick"
 	},
 	"result": {
 		"id": "stringtools:string_sword"

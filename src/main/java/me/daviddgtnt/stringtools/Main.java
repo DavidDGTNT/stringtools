@@ -5,15 +5,17 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class Main implements ModInitializer {
-	public static final Item STRING_STICK = new Item(new Item.Settings());
-	public static final ToolItem STRING_SWORD = new SwordItem(StringToolMaterial.INSTANCE,  new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(StringToolMaterial.INSTANCE, 4, 1.6F)));
-	public static final ToolItem STRING_PICKAXE = new PickaxeItem(StringToolMaterial.INSTANCE, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(StringToolMaterial.INSTANCE, 2.0F, 2.4F)));
-	public static final ToolItem STRING_AXE = new AxeItem(StringToolMaterial.INSTANCE, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(StringToolMaterial.INSTANCE, 7.0F, 0.8F)));
-	public static final ToolItem STRING_SHOVEL = new ShovelItem(StringToolMaterial.INSTANCE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(StringToolMaterial.INSTANCE, 2.5F, 1.0F)));
-	public static final ToolItem STRING_HOE = new HoeItem(StringToolMaterial.INSTANCE, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(StringToolMaterial.INSTANCE, 1.0F, 1.0F)));
+	public static final Item STRING_STICK = new Item(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("stringtools","string_stick" ))));
+	public static final SwordItem STRING_SWORD = new SwordItem(StringToolMaterial.INSTANCE, 4, 1.6F, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("stringtools", "string_sword"))));
+	public static final MiningToolItem STRING_PICKAXE = new PickaxeItem(StringToolMaterial.INSTANCE, 2.0F, 2.4F, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("stringtools", "string_pickaxe"))));
+	public static final MiningToolItem STRING_AXE = new AxeItem(StringToolMaterial.INSTANCE, 7.0F, 0.8F, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("stringtools", "string_axe"))));
+	public static final MiningToolItem STRING_SHOVEL = new ShovelItem(StringToolMaterial.INSTANCE, 2.5F, 1.0F, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("stringtools", "string_shovel"))));
+	public static final MiningToolItem STRING_HOE = new HoeItem(StringToolMaterial.INSTANCE, 1.0F, 1.0F, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("stringtools", "string_hoe"))));
 	
 	@Override
 	public void onInitialize() {
@@ -25,7 +27,7 @@ public class Main implements ModInitializer {
 		Registry.register(Registries.ITEM, Identifier.of("stringtools", "string_hoe"), STRING_HOE);
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content -> content.addBefore(Items.STICK, STRING_STICK));
-		
+
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
 			content.addBefore(Items.WOODEN_SHOVEL, STRING_HOE);
 			content.addBefore(STRING_HOE, STRING_AXE);

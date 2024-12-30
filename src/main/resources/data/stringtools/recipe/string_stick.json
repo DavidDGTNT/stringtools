@@ -5,9 +5,7 @@
 		"S"
 	],
 	"key": {
-		"S": {
-			"item": "minecraft:string"
-		}
+		"S": "minecraft:string"
 	},
 	"result": {
 		"id": "stringtools:string_stick",
